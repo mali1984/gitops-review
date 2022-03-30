@@ -1,0 +1,13 @@
+apiVersion: config.openshift.io/v1
+kind: ClusterOperator
+metadata:
+  name: authentication
+  annotations:
+    include.release.openshift.io/self-managed-high-availability: "true"
+    exclude.release.openshift.io/internal-openshift-hosted: "true"
+status:
+  versions:
+  - name: operator
+    version: "4.6.36"
+  - name: oauth-openshift
+    version: "4.6.36_openshift"

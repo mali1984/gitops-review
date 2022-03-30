@@ -1,0 +1,66 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: openshift-cluster-storage-operator
+  name: csi-snapshot-controller-operator
+  labels:
+    app: csi-snapshot-controller-operator
+  annotations:
+    config.openshift.io/inject-proxy: csi-snapshot-controller-operator
+    exclude.release.openshift.io/internal-openshift-hosted: "true"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: csi-snapshot-controller-operator
+  template:
+    metadata:
+      name: csi-snapshot-controller-operator
+      labels:
+        app: csi-snapshot-controller-operator
+    spec:
+      serviceAccountName: csi-snapshot-controller-operator
+      containers:
+      - name: csi-snapshot-controller-operator
+        image: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:a941d9fe3eef07f561a77ed835b57090496af7c950beabe807bb687725d57a27
+        imagePullPolicy: IfNotPresent
+        resources:
+          requests:
+            memory: 50Mi
+            cpu: 10m
+        args: [ "start", "-v", "5" , "--config=/var/run/configmaps/config/operator-config.yaml"]
+        env:
+        - name: OPERAND_IMAGE
+          value: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:8ad73360a03f44aea79b9b2f134f9719c5cf8a4d9cd121fb55383347c19733df
+        - name: OPERATOR_IMAGE_VERSION
+          value: "4.6.36"
+        - name: OPERAND_IMAGE_VERSION
+          value: "4.6.36"
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        terminationMessagePolicy: FallbackToLogsOnError
+        volumeMounts:
+        - mountPath: /var/run/configmaps/config
+          name: config
+      volumes:
+      - name: config
+        configMap:
+          defaultMode: 440
+          name: csi-snapshot-controller-operator-config
+      priorityClassName: "system-cluster-critical"
+      nodeSelector:
+        node-role.kubernetes.io/master: ""
+      tolerations:
+      - key: "node.kubernetes.io/unreachable"
+        operator: "Exists"
+        effect: "NoExecute"
+        tolerationSeconds: 120
+      - key: "node.kubernetes.io/not-ready"
+        operator: "Exists"
+        effect: "NoExecute"
+        tolerationSeconds: 120
+      - key: node-role.kubernetes.io/master
+        operator: Exists
+        effect: "NoSchedule"

@@ -1,0 +1,85 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: console-operator
+  namespace: openshift-console-operator
+  annotations:
+    config.openshift.io/inject-proxy: console-operator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: console-operator
+  template:
+    metadata:
+      labels:
+        name: console-operator
+    spec:
+      nodeSelector:
+        node-role.kubernetes.io/master: ""
+      tolerations:
+      - key: node-role.kubernetes.io/master
+        operator: Exists
+        effect: "NoSchedule"
+      - key: "node.kubernetes.io/unreachable"
+        operator: "Exists"
+        effect: "NoExecute"
+        tolerationSeconds: 120
+      - key: "node.kubernetes.io/not-ready"
+        operator: "Exists"
+        effect: "NoExecute"
+        tolerationSeconds: 120
+      priorityClassName: system-cluster-critical
+      serviceAccountName: console-operator
+      containers:
+      - name: console-operator
+        terminationMessagePolicy: FallbackToLogsOnError
+        image: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:aefc9e24abf6a2a0d89a55fff01940cb0c60c7be7a12eeb64dffad66ec7caaab
+        ports:
+        - containerPort: 60000
+          name: metrics
+        command:
+        - console
+        - operator
+        args:
+        - "-v=2"
+        - "--config=/var/run/configmaps/config/controller-config.yaml"
+        imagePullPolicy: IfNotPresent
+        volumeMounts:
+        - mountPath: /var/run/configmaps/config
+          name: config
+        - mountPath: /var/run/secrets/serving-cert
+          name: serving-cert
+        env:
+        - name: IMAGE
+          value: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:3ae6a7a150478fe4c7f09271bcae819b8216aabe2510aa08efdbf321999feefd
+        - name: RELEASE_VERSION
+          value: "4.6.36"
+        - name: OPERATOR_NAME
+          value: "console-operator"
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        resources:
+          requests:
+            memory: "100Mi"
+            cpu: "10m"
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 8443
+            scheme: HTTPS
+        readinessProbe:
+          httpGet:
+            path: /readyz
+            port: 8443
+            scheme: HTTPS
+      volumes:
+      - name: config
+        configMap:
+          name: console-operator-config
+      - name: serving-cert
+        secret:
+          secretName: serving-cert
+          optional: true

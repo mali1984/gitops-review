@@ -1,0 +1,21 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: openshift-apiserver-operator-check-endpoints
+  namespace: openshift-apiserver
+  annotations:
+    include.release.openshift.io/self-managed-high-availability: "true"
+spec:
+  endpoints:
+  - bearerTokenFile: /var/run/secrets/kubernetes.io/serviceaccount/token
+    interval: 30s
+    port: check-endpoints
+    scheme: https
+    tlsConfig:
+      insecureSkipVerify: true
+  jobLabel: component
+  namespaceSelector:
+    matchNames:
+    - openshift-apiserver
+  selector:
+    matchLabels: {}

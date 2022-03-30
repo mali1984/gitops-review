@@ -1,0 +1,2066 @@
+{
+  "kind": "ImageStream",
+  "apiVersion": "image.openshift.io/v1",
+  "metadata": {
+    "name": "4.6.36",
+    "creationTimestamp": "2021-06-23T05:41:32Z",
+    "annotations": {
+      "release.openshift.io/from-image-stream": "ocp/4.6-art-latest-2021-06-19-165544",
+      "release.openshift.io/from-release": "registry.ci.openshift.org/ocp/release:4.6.0-0.nightly-2021-06-19-165544"
+    }
+  },
+  "spec": {
+    "lookupPolicy": {
+      "local": false
+    },
+    "tags": [
+      {
+        "name": "aws-ebs-csi-driver",
+        "annotations": {
+          "io.openshift.build.commit.id": "b4647c129df74ac1d731c03b5a12c45cdac77f7d",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/aws-ebs-csi-driver"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:1fe66262bba7b73f875919d957038bdbcb3d55be81e5a781f66529e5cebcc247"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "aws-ebs-csi-driver-operator",
+        "annotations": {
+          "io.openshift.build.commit.id": "71b6b96427de49ecbba3cf35726ff1607b9f4ae8",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/aws-ebs-csi-driver-operator"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:074f6e991648543e1c525b1749146902156b510bd613b100365a99ae038969a7"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "aws-machine-controllers",
+        "annotations": {
+          "io.openshift.build.commit.id": "878b3a16e964d29d8c76a093efa0fab47d6f6b51",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/cluster-api-provider-aws"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:44c3aa3b69fc48e9372958fc39def3469b6f6d8882609e7341afac6dac24384e"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "aws-pod-identity-webhook",
+        "annotations": {
+          "io.openshift.build.commit.id": "d5f1271996d1feede3e6bcf0d4eda8246e535063",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/aws-pod-identity-webhook"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:73d5bc847aa41ea73984271efa547a48ae45626d512e5f96653c0fe67ddf399a"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "azure-machine-controllers",
+        "annotations": {
+          "io.openshift.build.commit.id": "7a14c7f1a41a1b5b7bde1367464ae9552f24609b",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/cluster-api-provider-azure"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:f338601cc7fb491a3851319bac9aafe1fae6118e850d264ec9048a4f87a76221"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "baremetal-installer",
+        "annotations": {
+          "io.openshift.build.commit.id": "68ab13d26311a3e03854a00fd7cf5b1583ae9b69",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/installer"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:4d55f86c9a7e6f84155bdfef4f0083e0177aea913125986decefbd349451bf27"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "baremetal-machine-controllers",
+        "annotations": {
+          "io.openshift.build.commit.id": "16b67b78b538ec2bf24e6457fe469dfb92db9d77",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/cluster-api-provider-baremetal"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:99a1368d1dc31d63855f227ff3fad5b3faf797b9d75fc8eb50a7d370b33e3bc0"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "baremetal-operator",
+        "annotations": {
+          "io.openshift.build.commit.id": "b4b10a088a0cef66c1ba8a9c0d88db4fa33699d3",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/baremetal-operator"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:da8c7e5e13d3fced40bacd1b2a3b07d12b784f18f1e5afddf51d1cd55c6891a1"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "baremetal-runtimecfg",
+        "annotations": {
+          "io.openshift.build.commit.id": "a6d621b2f7a75c0a4b265b22d6d7665c5cce9a92",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/baremetal-runtimecfg"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:cbbc930d80af7d04b66d72c041ab92b2d0d98a605c71e5f3c2a927e27557d489"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "cli",
+        "annotations": {
+          "io.openshift.build.commit.id": "99556b63dfcde8ba5b4746199caa142ce6717eed",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/oc"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:39b4304168499e0438d5653bec17fde88c629a42fd9209a28b4e5ade2df13740"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "cli-artifacts",
+        "annotations": {
+          "io.openshift.build.commit.id": "99556b63dfcde8ba5b4746199caa142ce6717eed",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/oc"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:dbc9198393a0ae7f1de474f0efb1c0cddf83f61ce37e8bcb1a7c9f1330d9097f"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "cloud-credential-operator",
+        "annotations": {
+          "io.openshift.build.commit.id": "e3f009da89c0357fed1a176af618061dcb184793",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/cloud-credential-operator"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:95dbd65494dc7535763e10efee870acfcb7b5692bf6b53495a1c4e41b8e29d2c"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "cluster-authentication-operator",
+        "annotations": {
+          "io.openshift.build.commit.id": "938196ece243bfffb6f0f3d634f86ae740e29118",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/cluster-authentication-operator"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:b58ebbc2168059c7c79299efb366ebc28aa602b7f2ad6e29a36e5fc4ec76dfec"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "cluster-autoscaler",
+        "annotations": {
+          "io.openshift.build.commit.id": "a19224cf4a9f9ba6e3daaadc364e6a8fc91004b6",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/kubernetes-autoscaler"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:7a0d92e7d21a45671c5033d0708c796d8051fb04142236d0c7b9a5ed68aabca9"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "cluster-autoscaler-operator",
+        "annotations": {
+          "io.openshift.build.commit.id": "8e81a68d7dccf65293328e3d775c1f9c879f167b",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/cluster-autoscaler-operator"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:eeba5f7984ab9045bc7e5c93cc13eaa88087885355ad550202b0867e784ef15f"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "cluster-bootstrap",
+        "annotations": {
+          "io.openshift.build.commit.id": "6441019151cdc7cbbdd034fb7d459235682b4a74",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/cluster-bootstrap"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:93f5f093ff0c5b48f1582a625af4ff8364a44ba704df24e66588db6e0eb42222"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "cluster-config-operator",
+        "annotations": {
+          "io.openshift.build.commit.id": "d7db686cd420964efa14cb3d0cdfebd6b222219e",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/cluster-config-operator"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:f57df32c78759f13e8b843f26b2e40a42be494868c26d64103f0515c081f2707"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "cluster-csi-snapshot-controller-operator",
+        "annotations": {
+          "io.openshift.build.commit.id": "68618ad3891579c0dcff5c3a701a927f2f383a42",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/cluster-csi-snapshot-controller-operator"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:a941d9fe3eef07f561a77ed835b57090496af7c950beabe807bb687725d57a27"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "cluster-dns-operator",
+        "annotations": {
+          "io.openshift.build.commit.id": "b45ac97a50a7d2666e3acd6241ad8b1e4e57a19f",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/cluster-dns-operator"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:79f4efc60b24fe478526dfe8b8e5a8d51e721c04acda94f1d6ea8cb0f9dd5c3b"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "cluster-etcd-operator",
+        "annotations": {
+          "io.openshift.build.commit.id": "c5ec85841302bf4c93fbf2da860b96fea10e068d",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/cluster-etcd-operator"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:0b4ef1ff9f97c9d5f5447e75220af36c6956798ffcb5bf3bbb22fd9b33c17bdc"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "cluster-image-registry-operator",
+        "annotations": {
+          "io.openshift.build.commit.id": "63dd6d99089d388da398560e4e84d4a9c6a5bd33",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/cluster-image-registry-operator"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:80abf78c2e423eb97a5a0f8d4d08d4ac4599b6a363f0e566d04e7ab515aaef16"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "cluster-ingress-operator",
+        "annotations": {
+          "io.openshift.build.commit.id": "17dfa4424be9f0c002e262726d7e8695ed85fe18",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/cluster-ingress-operator"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:65dd8b76624959bd2a9871e22868e326ad34154dfede6beeccd0d6e5ba599467"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "cluster-kube-apiserver-operator",
+        "annotations": {
+          "io.openshift.build.commit.id": "0a8f1f99f98b4637cfb5a22c61c92264687da859",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/cluster-kube-apiserver-operator"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:17db5d16be43603c2e8255ba98dc7cb8f53a3e10c8fbbf644602b707cc797f2e"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "cluster-kube-controller-manager-operator",
+        "annotations": {
+          "io.openshift.build.commit.id": "b05961c979fff825cc17fbd66660f7409cc82f28",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/cluster-kube-controller-manager-operator"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:1e1f8bfab7c8f54f98f256402c40694321b440f6ee5764040a43d1b59bece75f"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "cluster-kube-scheduler-operator",
+        "annotations": {
+          "io.openshift.build.commit.id": "0b9b05bc63e9b079827b3fea86524811bf483612",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/cluster-kube-scheduler-operator"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:45a47c7a49b1cd084944e4e69b8259c7458f0713236d2fc81096b4be0848d0e3"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "cluster-kube-storage-version-migrator-operator",
+        "annotations": {
+          "io.openshift.build.commit.id": "a75236dc5a0ad8bc058a3f1e5f38adb1c70af1c4",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/cluster-kube-storage-version-migrator-operator"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:bac953b5c6978c80f4a1dd7b23746a001948f22d619f6a1f09e590aa538db0e0"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "cluster-machine-approver",
+        "annotations": {
+          "io.openshift.build.commit.id": "a6320f458e1bc658048625ab9a1c3020f3a6e165",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/cluster-machine-approver"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:9f5c4538f1adf368fd052fc51c7f1a49b5b63a580cf3c508a47b5ab7a263828d"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "cluster-monitoring-operator",
+        "annotations": {
+          "io.openshift.build.commit.id": "e6a81929650ce8826a15629b713e466b0a3ae664",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/cluster-monitoring-operator"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:86a61ea9f981c70bbbf0ce3a6e7d0374b86359df012e53d4872af30b28604408"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "cluster-network-operator",
+        "annotations": {
+          "io.openshift.build.commit.id": "8ac790ed00964c0ea932740ca9791b3e71d2d3f9",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/cluster-network-operator"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:e453d6e4d55de90200d145111bf47c16bf852e7200214ba66497a8cc94aeeedf"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "cluster-node-tuning-operator",
+        "annotations": {
+          "io.openshift.build.commit.id": "191ec1e8327287cd560914fccad909817fe087b1",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/cluster-node-tuning-operator"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:b4a484df3317c75b003ab2f2d2b9ad2fcbb59b05549c1f47005a96f7a11aa27e"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "cluster-openshift-apiserver-operator",
+        "annotations": {
+          "io.openshift.build.commit.id": "163e5e795d9f273a28a47b8950c9c8553994fca0",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/cluster-openshift-apiserver-operator"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:6efc3e16de7dbdf97daec51eb5666b8041646b4144f2d0acd559988272d0216e"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "cluster-openshift-controller-manager-operator",
+        "annotations": {
+          "io.openshift.build.commit.id": "e6bd98b2cbb6d7580d90ccfe530f1724e557edfb",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/cluster-openshift-controller-manager-operator"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:bb6169efde2b3ce3cb6bc7faac8f61165349f22fd346ab74a102b682254229be"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "cluster-policy-controller",
+        "annotations": {
+          "io.openshift.build.commit.id": "aa12fbe31eb4704d221ddcbc245fd4b2f7d45a42",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/cluster-policy-controller"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:1b9db2763bd0179cf5246f1c29381318ed98eebb2aa92ab366720a5e351214c7"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "cluster-samples-operator",
+        "annotations": {
+          "io.openshift.build.commit.id": "45bc9dda411f488693a293a265f776d595f340b8",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/cluster-samples-operator"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:86164e9bfb176484c03d685d8a87176091f92ec52c3f36b51b4c77003e39964c"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "cluster-storage-operator",
+        "annotations": {
+          "io.openshift.build.commit.id": "58bf46eaaee91a3be03625177fb884b735fc520c",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/cluster-storage-operator"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:ec9a26ec48375125f1cf11ec62e54cd4aede9e7dbfdeffcf9d95aa17b6bf80a2"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "cluster-update-keys",
+        "annotations": {
+          "io.openshift.build.commit.id": "70c87c7025f2c726e523b2fefbb9252772550c1c",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/cluster-update-keys"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:bb9b3d09976e9fbbcbc4d9ed19cdd9440e64de38a71a75e77aefb656735d6af3"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "cluster-version-operator",
+        "annotations": {
+          "io.openshift.build.commit.id": "44444894ebe02e943d92514dd981f2fa314adacc",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/cluster-version-operator"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:86248c7a456545ed4c88cdc6b1cc83da651abd378e37ef481b0f31f045609d68"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "configmap-reloader",
+        "annotations": {
+          "io.openshift.build.commit.id": "2ac2b6353aa536ddbb5785509a182baea7829b57",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/configmap-reload"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:b4c0cc18a89f6dc144f5069701ca6578eb3d6a3723167bbdb2752851c74cd690"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "console",
+        "annotations": {
+          "io.openshift.build.commit.id": "11dd5d84bd33ef53530058547bbf20e9a5b31f3d",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/console"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:3ae6a7a150478fe4c7f09271bcae819b8216aabe2510aa08efdbf321999feefd"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "console-operator",
+        "annotations": {
+          "io.openshift.build.commit.id": "7fd78a283616d3b0a99b5b5b1f2b765a192d9165",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/console-operator"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:aefc9e24abf6a2a0d89a55fff01940cb0c60c7be7a12eeb64dffad66ec7caaab"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "container-networking-plugins",
+        "annotations": {
+          "io.openshift.build.commit.id": "ca372decc534a71f425bbe972395f46c5de227b4",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/containernetworking-plugins"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:60dd75c6bf3952a0236604d125990ad86c8c703fb93f976c364f2be79b14ebda"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "coredns",
+        "annotations": {
+          "io.openshift.build.commit.id": "885fb55e59fe360b17f9f8eb3c0aebd1d5f49987",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/coredns"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:912dc55342fda3f03e4ced9668616bdd17dcb93f4050461094e83f6b00956643"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "csi-driver-manila",
+        "annotations": {
+          "io.openshift.build.commit.id": "6dd9c20135583f65c7f8caca9ad583cf0c2281c8",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/cloud-provider-openstack"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:1852049dc15cad2727ae110ffe5c9bc56e4dc4e7b07be19eb2e4e9b5f4f9bcee"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "csi-driver-manila-operator",
+        "annotations": {
+          "io.openshift.build.commit.id": "7b3806565bcf4b21d103896f369304ad28fbc9ac",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/csi-driver-manila-operator"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:ea6d236d86bef4353c4099123a12a72071731a1f77ff0523ddc565977d987a83"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "csi-driver-nfs",
+        "annotations": {
+          "io.openshift.build.commit.id": "5e962cbd824dc5b5634f54a645e4907a1494fe04",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/csi-driver-nfs"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:4b29fbaa310ecb1acb01788f0a74835800f5722d20bb501212061d4f7644dd4b"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "csi-external-attacher",
+        "annotations": {
+          "io.openshift.build.commit.id": "45e712af8947aa25865ffb4ebf1f8e466a1d3281",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/csi-external-attacher"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:3e419aa9c8b1623a1bfc33f3a1fa74b702663627a4d19582b1782eea5b7c1360"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "csi-external-provisioner",
+        "annotations": {
+          "io.openshift.build.commit.id": "e079d112ff1a9b751fb85c2972f71031af08f0c1",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/csi-external-provisioner"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:fc9125b0bfc8843fc53b763908b4b353a8f2991731ca3f61375ade95347791c7"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "csi-external-resizer",
+        "annotations": {
+          "io.openshift.build.commit.id": "b2c4b92328ad1a1dd81498170d107ce9a57d89e3",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/csi-external-resizer"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:40e9c3e9310a88b369da3ded7bb24669007ae2f1133ca2ad64da7bad8d7a1e2d"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "csi-external-snapshotter",
+        "annotations": {
+          "io.openshift.build.commit.id": "c80c3836d33131ed810cbe9f599e3cc2d2746dfd",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/csi-external-snapshotter"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:6df7b538de9a94edddbc1ac631c3e2c90c9c1fd368524cb149b55bc3da27e0a2"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "csi-livenessprobe",
+        "annotations": {
+          "io.openshift.build.commit.id": "53f2398ae6f0c7397a8854a2160d55a79b429252",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/csi-livenessprobe"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:0e242ff08cce5f42b7bb587a590ecc1408f8dc50360aa74cd001f5c0ae0eead7"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "csi-node-driver-registrar",
+        "annotations": {
+          "io.openshift.build.commit.id": "4ba25176eb3657f7b86b7c34854faae895212ce6",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/csi-node-driver-registrar"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:1f6953f3f74ea895b82ce7daabb9e59ff7e738491c2d0f7e9740f3acbde9ce02"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "csi-snapshot-controller",
+        "annotations": {
+          "io.openshift.build.commit.id": "c80c3836d33131ed810cbe9f599e3cc2d2746dfd",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/csi-external-snapshotter"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:8ad73360a03f44aea79b9b2f134f9719c5cf8a4d9cd121fb55383347c19733df"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "deployer",
+        "annotations": {
+          "io.openshift.build.commit.id": "99556b63dfcde8ba5b4746199caa142ce6717eed",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/oc"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:673b79f9c654913ef8a559c4b545f610013bce2aacaa65b5e560b236d4891330"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "docker-builder",
+        "annotations": {
+          "io.openshift.build.commit.id": "263041a5e75138509e89d5a286a1fd5186609d9e",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/builder"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:a261653285dfb996fef425335d85a0b324af3ce88689e21dd7d3905e57b7c020"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "docker-registry",
+        "annotations": {
+          "io.openshift.build.commit.id": "5077c16f0562441ddfb6a6a750e96c17ed24ec8b",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/image-registry"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:8eb29e6dfb7f623aaedf6e1579db0468b33635ed6c94638f4c1a77bc3b074523"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "driver-toolkit",
+        "annotations": {
+          "io.openshift.build.commit.id": "b58b2c4a2e2322f6a1f5ad9e00591894eaa5a95a",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/driver-toolkit"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:27eda71010781eec64fde8309a2240445404200bb5b82fb42fcf8645f27172d3"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "etcd",
+        "annotations": {
+          "io.openshift.build.commit.id": "2cc1056e339d36522b47b6a9c0835accc3395847",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/etcd"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:ba8a5f35a37e801245248f3f4115ca6cefb11fad63c988c153aed60c3bd90ff6"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "gcp-machine-controllers",
+        "annotations": {
+          "io.openshift.build.commit.id": "9b15b1192f37d45821100ca047617849db996342",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/cluster-api-provider-gcp"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:6a172d0cc59c8e1c3d091448c938b9a8f3280d4bb77d15a544c6d4340f365e4e"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "grafana",
+        "annotations": {
+          "io.openshift.build.commit.id": "1075a442529594154a8fd148a9679b634194cc3b",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/grafana"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:18b942bfc4547a719f1e03c5dece4538fd6fd78c2cacb134dc6d3de6d10aa7eb"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "haproxy-router",
+        "annotations": {
+          "io.openshift.build.commit.id": "60ad303221c7abe68e115d699b68c3de78900986",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/router"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:05a52a688693ef695970bd92c8436ffa1ac715a5d0201f3ab74d046fbc4422df"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "hyperkube",
+        "annotations": {
+          "io.openshift.build.commit.id": "b00ba528042af9b2bed6feb98e2b0fab574331fe",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/kubernetes",
+          "io.openshift.build.version-display-names": "",
+          "io.openshift.build.versions": "kubernetes=1.19.4"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:745173c0b0fc62cfa10cead1e93f0aebdc382063f67c5ad16999e25c177be11d"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "insights-operator",
+        "annotations": {
+          "io.openshift.build.commit.id": "69f216828f180b08c15ba4f2620ffa2404144090",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/insights-operator"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:357bee87105a0dc3bce20d2233d16adf28624148573a2ae4b84b83448b14ae08"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "installer",
+        "annotations": {
+          "io.openshift.build.commit.id": "68ab13d26311a3e03854a00fd7cf5b1583ae9b69",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/installer"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:52226084393b1137dc39ae6569efe2b9ff510c7167596607a11eb89eaec8de1d"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "installer-artifacts",
+        "annotations": {
+          "io.openshift.build.commit.id": "68ab13d26311a3e03854a00fd7cf5b1583ae9b69",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/installer"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:825b93308b1b5caf8c0527f3dbdd9583e66a8650aa1ddc1a499e81db80ddca64"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "ironic",
+        "annotations": {
+          "io.openshift.build.commit.id": "e4a23ad4f2dbc42fca204c3fba272991dc4ba271",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/ironic-image"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:db0d99f13eb28a4d4868df3067d4ed6b84adcff5921b7d8d35c6e118fdd0425b"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "ironic-hardware-inventory-recorder",
+        "annotations": {
+          "io.openshift.build.commit.id": "2205538ae2eec1e1c9ca002011820ab86011b121",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/ironic-hardware-inventory-recorder-image"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:7c22594563811b12aac91ce5870cec878fe94f3dec6b75005e12f5274b2ec5ca"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "ironic-inspector",
+        "annotations": {
+          "io.openshift.build.commit.id": "38c91c8e3c96a76ea3cb4ecc3b629dce102217e4",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/ironic-inspector-image"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:d978729587a2ad76c1d8e9e3b7dd522101aa8a657e35d2432e8dc2f00909e067"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "ironic-ipa-downloader",
+        "annotations": {
+          "io.openshift.build.commit.id": "085dd5f10d9b6689aad2a26ded832b2ecc36bcc7",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/ironic-ipa-downloader"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:91463c8c534fe582262f0bc7b8aad3872aa6652e22cf25617ff484e112ee5774"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "ironic-machine-os-downloader",
+        "annotations": {
+          "io.openshift.build.commit.id": "b289a391a2a370e503e35005176f2587c6d4d9bf",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/ironic-rhcos-downloader"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:b3ced291f96748f47575ec2dfbc685d77cd6526da332d65b85b57e31bbc3f429"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "ironic-static-ip-manager",
+        "annotations": {
+          "io.openshift.build.commit.id": "2f197d075db5cec48803455808e62b5f0ce03eb1",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/ironic-static-ip-manager"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:cc5d8cf04ed37c5cbda7163979d5573e737ec199a091179f0b9059cbba8f4401"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "jenkins",
+        "annotations": {
+          "io.openshift.build.commit.id": "4d96f05ff3862714cfacc68fd2516423a204b589",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/jenkins"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:557a62df64d8ea2c510ccad81ddf878bc21b6ebe9042820da858c318e7dd01c7"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "jenkins-agent-base",
+        "annotations": {
+          "io.openshift.build.commit.id": "4d96f05ff3862714cfacc68fd2516423a204b589",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/jenkins"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:8531b5c2a1e0902faa7b09ac3d9b5d9bf90330bede4e17b86df17485e8776e03"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "jenkins-agent-maven",
+        "annotations": {
+          "io.openshift.build.commit.id": "4d96f05ff3862714cfacc68fd2516423a204b589",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/jenkins"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:c58d17193b51e88d75e576260c0102eedeb63f7ab0492c6297519547b861289d"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "jenkins-agent-nodejs",
+        "annotations": {
+          "io.openshift.build.commit.id": "4d96f05ff3862714cfacc68fd2516423a204b589",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/jenkins"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:6d37451d17ee52e93083fdc91445725d2f82f51ecce8be72a9137471b6b4f2e9"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "k8s-prometheus-adapter",
+        "annotations": {
+          "io.openshift.build.commit.id": "7f012a26a1b7ccce4344d676e35f220fd209c614",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/k8s-prometheus-adapter"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:725f086e5cca0969e58d4be4aa87fbbed07b948442ee4b8a091b1da256f11d8f"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "keepalived-ipfailover",
+        "annotations": {
+          "io.openshift.build.commit.id": "618b71dbd1ec125da6b0dd004e4dcc2a085f3cb3",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/images"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:cdeffb790aff6d44c158c275f54c8aefe50c33824aae640b6b7ba62ded75bd33"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "kube-proxy",
+        "annotations": {
+          "io.openshift.build.commit.id": "a8c31132f6b3cb8931d44f12deda016b5065d6ce",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/sdn"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:198eeb9a4277ae3a6f6b2d855c1cfe7e1e4ad4af25d857b97bf62ac2f6093f9d"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "kube-rbac-proxy",
+        "annotations": {
+          "io.openshift.build.commit.id": "fae6ace52b865699ddd6dc4608ee3637ee4ee1b0",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/kube-rbac-proxy"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:25b62a00ea77d0f57906ee344a1416f3b0183aca8008e98a87cd5d06cfa4a690"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "kube-state-metrics",
+        "annotations": {
+          "io.openshift.build.commit.id": "3a6c689c6c7da5fc2a0488276c98e051c74e89b1",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/kube-state-metrics"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:ee00b67fa5b6d2277423e411d486eb5a763cf644e9d0464e56039a6d5f4acb9e"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "kube-storage-version-migrator",
+        "annotations": {
+          "io.openshift.build.commit.id": "6deeefa7d0ef32abd3ff7df04642cb7b29fc7ffa",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/kubernetes-kube-storage-version-migrator"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:5da82b0e80b6087ac1f0361fa64d019750129eb0340b93e140f6450bf8baba7d"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "kuryr-cni",
+        "annotations": {
+          "io.openshift.build.commit.id": "7feb5bd1ced2dae68bf89aa6168d8f569cb53b93",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/kuryr-kubernetes"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:eae7daf009b32496a664103f392458e8a294d16d94aeab7d05fd9db01b4e0679"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "kuryr-controller",
+        "annotations": {
+          "io.openshift.build.commit.id": "7feb5bd1ced2dae68bf89aa6168d8f569cb53b93",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/kuryr-kubernetes"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:8df6cecca0db750dccbe63b9c8913fddcd087e3fa254c188d38ae0b58979f01e"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "libvirt-machine-controllers",
+        "annotations": {
+          "io.openshift.build.commit.id": "b3e2718f198ee2ca5c0c29a8bc91b3b241a9aed9",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/cluster-api-provider-libvirt"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:fdbeae7d6bf3cd03d7783090a02da7b9fc6931ea9124679c6c86b8bbc7299fd8"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "machine-api-operator",
+        "annotations": {
+          "io.openshift.build.commit.id": "90dfcb88c02d8f4f11ce12387b93add3a5d18468",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/machine-api-operator"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:3128a6ea47967247d64385c90273f7ca32a7edc254a83729746e1cc406617622"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "machine-config-operator",
+        "annotations": {
+          "io.openshift.build.commit.id": "093319e36578d1d40f02e4d8ba939dee1f536448",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/machine-config-operator"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:58da41f6a485683a09c0cb826e50bca91c144bf84c484e119228c83e52b8f9ec"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "machine-os-content",
+        "annotations": {
+          "io.openshift.build.commit.id": "",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "",
+          "io.openshift.build.version-display-names": "machine-os=Red Hat Enterprise Linux CoreOS",
+          "io.openshift.build.versions": "machine-os=46.82.202106181041-0"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:da624f8006e58abcec78bb926be1365a9bf1084d1835796322af9ff44c4d7295"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "mdns-publisher",
+        "annotations": {
+          "io.openshift.build.commit.id": "793a43fcc1e15890ea7e20c5aee2baf1dddda9f0",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/mdns-publisher"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:0ef744b52b0ce11398feab96d3e9c483ae1a02a10b88f62197c3003ee517d57e"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "multus-admission-controller",
+        "annotations": {
+          "io.openshift.build.commit.id": "de9b6e18cc0d3047cb05185e09b9e2e8bb3c5c34",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/multus-admission-controller"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:98b21ea59c78c7de41a273072501e99e6ee0ebd3c1dd3d8bacfe1d8f754babfa"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "multus-cni",
+        "annotations": {
+          "io.openshift.build.commit.id": "30668ec22bd3e92ae2bb258aeff8aca744377574",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/multus-cni"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:05430e9f7d2d209fe05700a8802bc686673dfe90412903a08ae10e018e929707"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "multus-route-override-cni",
+        "annotations": {
+          "io.openshift.build.commit.id": "da944e11953b64c1f6e6b8a0319c3a988997bcf6",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/route-override-cni"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:d5d2d80152cdbf7ecd663229d189cfb4c431d6fd39010cb935580cc51ec72be4"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "multus-whereabouts-ipam-cni",
+        "annotations": {
+          "io.openshift.build.commit.id": "577a9f82a77ee9e19a306b8ea4c40b5dc8657f3f",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/whereabouts-cni"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:1f7c016b26091bbf46d3916c168c7ea06c92531c06ab8cf780261f6825b9ea1b"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "must-gather",
+        "annotations": {
+          "io.openshift.build.commit.id": "6f310efcaedc68b16a14618abbdbb1b0e97c337d",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/must-gather"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:bd9defa8957805dd9ddf1867210ef09daf1051366b5dd2c8d658be77c520d037"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "network-metrics-daemon",
+        "annotations": {
+          "io.openshift.build.commit.id": "c5b56ed97be71c04fe1e56dbee3bbbb1dc28f4ad",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/network-metrics-daemon"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:f73f3198bc6fed0d243df52c36ef2bd18f5079a55ce5551fc0202e0d2c9256ac"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "oauth-apiserver",
+        "annotations": {
+          "io.openshift.build.commit.id": "3412a192ea1c2cd30acdf86dc8183e0235e78a16",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/oauth-apiserver"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:9ae35c29754ba52d48a76506ce56966d3aff3f4aa11c611792bf0f5241cfb18a"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "oauth-proxy",
+        "annotations": {
+          "io.openshift.build.commit.id": "63af096e2762f9165bc7b30d65b8cd11d60119e7",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/oauth-proxy"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:083531561c391bebfa08a6ddf1b43ca475f8945d1f102c49a60bc43f8242108d"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "oauth-server",
+        "annotations": {
+          "io.openshift.build.commit.id": "483800527504294f89aaacf165c2ccb873c44122",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/oauth-server"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:f173ee791210af5559bcd9669cabfa65c4f24586bee169b3fca1fec2851adcab"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "openshift-apiserver",
+        "annotations": {
+          "io.openshift.build.commit.id": "c09e60bc9c6e15cb432880858e5d14c711ff1d8d",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/openshift-apiserver"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:f165bb02bf3fbf3430a2a3c47efcbdfc24295370c152d6822283d1ec8067bbe2"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "openshift-controller-manager",
+        "annotations": {
+          "io.openshift.build.commit.id": "48ac4624d5e80a4830ac416228c95b75e273952a",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/openshift-controller-manager"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:f4313bd5a48f5a7f7fbce29863609f0bed69ccfd154e04feb57db1c27acc95dc"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "openshift-state-metrics",
+        "annotations": {
+          "io.openshift.build.commit.id": "24b34520a3a110dfc9884100d4f242da878dee35",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/openshift-state-metrics"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:83da9e3ec2fbeadabb10b3f4764f244163f86ec7236da7312f8b1db1552d2349"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "openstack-machine-controllers",
+        "annotations": {
+          "io.openshift.build.commit.id": "48b73415908af2333641faef06fb104666120177",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/cluster-api-provider-openstack"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:5d48c3c767f9591a00a916535152027ca1f7d3f0c6650e9710dbe4370f649d5c"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "operator-lifecycle-manager",
+        "annotations": {
+          "io.openshift.build.commit.id": "cf3f9b212526733cdb2678c947d7a75bbab6c037",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/operator-framework/operator-lifecycle-manager"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:8a315b36272d99410eb7354b3991439e6127b7d29078c576d83fe5ef71d51129"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "operator-marketplace",
+        "annotations": {
+          "io.openshift.build.commit.id": "f0c3f9d6acc14bc3fc98f9c8c1766f60a1b9efc6",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/operator-framework/operator-marketplace"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:0ac6944b3ae0a590ffb4f9929bf014eaa66e92e4eff346d947220070e8e8fe71"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "operator-registry",
+        "annotations": {
+          "io.openshift.build.commit.id": "d0b49148a4f476f1403c7b8fd262173789009484",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/operator-framework/operator-registry"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:fa55f15ff21796d7e9b1c0867b06a73e488fac653e87e22838ab4a17ad9a165d"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "ovirt-csi-driver",
+        "annotations": {
+          "io.openshift.build.commit.id": "dbe2fcdbb8a3e4d23b104e3379d9b2a490d2d602",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/ovirt-csi-driver"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:70cdaac045bfc848505d7ca0f61ad1df9562079c6f66fcde536740ec7495964e"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "ovirt-csi-driver-operator",
+        "annotations": {
+          "io.openshift.build.commit.id": "c4fc2c7537199df38adc1bdc92bfa15794d99c47",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/ovirt-csi-driver-operator"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:91377212e97d3df0b7584c0281728a32bea68e878e8f4aca39d1d7e595912360"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "ovirt-machine-controllers",
+        "annotations": {
+          "io.openshift.build.commit.id": "91f12f3f7dee290fa0f6977f5e06e3259e588087",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/cluster-api-provider-ovirt"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:cf94555a4f0b38468f4428c0b99deccc563ba2fe6ed5dbe4aabdf9916218c426"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "ovn-kubernetes",
+        "annotations": {
+          "io.openshift.build.commit.id": "1d9afd26953e0cf7035970a4101c9626d06ee74a",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/ovn-kubernetes"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:4bac5032c1374a8a2d9ab10b8ad6ba5f717786c9a3547fbabd099bd7d81c9204"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "pod",
+        "annotations": {
+          "io.openshift.build.commit.id": "618b71dbd1ec125da6b0dd004e4dcc2a085f3cb3",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/images"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:5aa5efe071bed792ad03d7e31862f0d54369097d80d21d25553984b3ae27b730"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "prom-label-proxy",
+        "annotations": {
+          "io.openshift.build.commit.id": "2b51499247434f960a5b543803a92309e3e7ab22",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/prom-label-proxy"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:50b1e6c33afec7add66d9c3a4ef72b035f87d9cfb64561e45c69635d040dd022"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "prometheus",
+        "annotations": {
+          "io.openshift.build.commit.id": "f97d7ec81d51522546a076095c141b2d1eb21030",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/prometheus"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:2f17a8a2611029e61dfa05c039421a7c7ecff3beb8a202157a38946452be0400"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "prometheus-alertmanager",
+        "annotations": {
+          "io.openshift.build.commit.id": "ddfb948a847563191515bd7edeb77e7a1deed596",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/prometheus-alertmanager"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:aea11e93ee2a0850e9e541aa0f9622ad8cb53a61ba2aed63270870e920bd73e2"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "prometheus-config-reloader",
+        "annotations": {
+          "io.openshift.build.commit.id": "555d6020fa7e3cfd8237daa9802e2bd9cd72ba63",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/prometheus-operator"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:5b34e14672a1356ffe51903c32d367848347c5fd61a24fa427f44642088e6efb"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "prometheus-node-exporter",
+        "annotations": {
+          "io.openshift.build.commit.id": "c63b8f3b05a5c432539a35ada3fdcac630475a06",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/node_exporter"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:3022fd301c5704ca59709f1e2624e4bd53c0d936595fc6e02612f8b78b52858e"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "prometheus-operator",
+        "annotations": {
+          "io.openshift.build.commit.id": "555d6020fa7e3cfd8237daa9802e2bd9cd72ba63",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/prometheus-operator"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:c111293fc1c2ccb9fd389ffeb9998fba6bf2d6c1190b673078e4404f21fe5a98"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "sdn",
+        "annotations": {
+          "io.openshift.build.commit.id": "a8c31132f6b3cb8931d44f12deda016b5065d6ce",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/sdn"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:23fa19733068520b8adf64053f563a1dfb7b9c19d9ea1889a295015ae5d4fbad"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "service-ca-operator",
+        "annotations": {
+          "io.openshift.build.commit.id": "0a3162106840fcded685eb23f1a8beadc6ee2837",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/service-ca-operator"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:be6c1c042db47b482cfc14352ac0318ecc0640a58b3ec0e68f3f624095ab6ff0"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "telemeter",
+        "annotations": {
+          "io.openshift.build.commit.id": "d7cd4df1ba5ff2b4d51015cfcfee916365dc5192",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/telemeter"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:92e663e0ed8886012ad9f6ef0c26ceba7832d1ddf529923e58bffaadfa6d10b3"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "tests",
+        "annotations": {
+          "io.openshift.build.commit.id": "f629c90891c0c7e49dbcc2a5fb44a177712fcfd8",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/origin"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:6987dd8ecbc60f3dae3042cf9eb1681049b0ed7dab30737f545cc4501274302b"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "thanos",
+        "annotations": {
+          "io.openshift.build.commit.id": "0bcab5dc06b05062d5c9caf2080ef7299a950771",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/thanos"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:134e9410cba0822b12f2b9986152d6ab338cb54be75f6182536555ecb219498c"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      },
+      {
+        "name": "tools",
+        "annotations": {
+          "io.openshift.build.commit.id": "99556b63dfcde8ba5b4746199caa142ce6717eed",
+          "io.openshift.build.commit.ref": "",
+          "io.openshift.build.source-location": "https://github.com/openshift/oc"
+        },
+        "from": {
+          "kind": "DockerImage",
+          "name": "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:13c222765e26c38d66c83d99b82d5693a27dd9b33bf36c914307945101616daf"
+        },
+        "generation": 2,
+        "importPolicy": {},
+        "referencePolicy": {
+          "type": "Source"
+        }
+      }
+    ]
+  },
+  "status": {
+    "dockerImageRepository": ""
+  }
+}

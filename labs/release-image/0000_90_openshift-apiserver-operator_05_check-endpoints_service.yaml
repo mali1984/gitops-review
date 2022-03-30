@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: check-endpoints
+  namespace: openshift-apiserver
+  annotations:
+    include.release.openshift.io/self-managed-high-availability: "true"
+spec:
+  ports:
+  - name: check-endpoints
+    port: 17698
+    targetPort: 17698
+  selector:
+    apiserver: "true"
+  type: ClusterIP
+

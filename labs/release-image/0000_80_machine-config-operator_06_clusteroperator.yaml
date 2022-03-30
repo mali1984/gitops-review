@@ -1,0 +1,27 @@
+apiVersion: config.openshift.io/v1
+kind: ClusterOperator
+metadata:
+  name: machine-config
+  annotations:
+    exclude.release.openshift.io/internal-openshift-hosted: "true"
+spec: {}
+status:
+  versions:
+    - name: operator
+      version: "4.6.36"
+  relatedObjects:
+    - group: ""
+      name: openshift-machine-config-operator
+      resource: namespaces
+    - group: machineconfiguration.openshift.io
+      resource: machineconfigpools
+    - group: machineconfiguration.openshift.io
+      resource: controllerconfigs
+    - group: machineconfiguration.openshift.io
+      resource: machineconfigs
+    - group: machineconfiguration.openshift.io
+      resource: kubeletconfigs
+    - group: machineconfiguration.openshift.io
+      resource: containerruntimeconfigs
+    - group: ""
+      resource: nodes

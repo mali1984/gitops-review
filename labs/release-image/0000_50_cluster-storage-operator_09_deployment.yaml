@@ -1,0 +1,77 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cluster-storage-operator
+  namespace: openshift-cluster-storage-operator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: cluster-storage-operator
+  template:
+    metadata:
+      labels:
+        name: cluster-storage-operator
+    spec:
+      nodeSelector:
+        node-role.kubernetes.io/master: ""
+      tolerations:
+      - key: node-role.kubernetes.io/master  # Just tolerate NoSchedule taint on master node. If there are other conditions like disk-pressure etc, let's not schedule the control-plane pods onto that node.
+        operator: Exists
+        effect: "NoSchedule"
+      - key: "node.kubernetes.io/unreachable"
+        operator: "Exists"
+        effect: "NoExecute"
+        tolerationSeconds: 120 # Evict pods within 2 mins.
+      - key: "node.kubernetes.io/not-ready"
+        operator: "Exists"
+        effect: "NoExecute"
+        tolerationSeconds: 120 # Evict pods within 2 mins.
+      priorityClassName: system-cluster-critical
+      serviceAccountName: cluster-storage-operator
+      containers:
+        - name: cluster-storage-operator
+          image: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:ec9a26ec48375125f1cf11ec62e54cd4aede9e7dbfdeffcf9d95aa17b6bf80a2
+          terminationMessagePolicy: FallbackToLogsOnError
+          ports:
+          - containerPort: 60000
+            name: metrics
+          command:
+          - cluster-storage-operator
+          - start
+          imagePullPolicy: IfNotPresent
+          env:
+          - name: OPERATOR_IMAGE_VERSION
+            value: "4.6.36"
+          - name: OPERAND_IMAGE_VERSION
+            value: "4.6.36"
+          - name: AWS_EBS_DRIVER_OPERATOR_IMAGE
+            value: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:074f6e991648543e1c525b1749146902156b510bd613b100365a99ae038969a7
+          - name: AWS_EBS_DRIVER_IMAGE
+            value: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:1fe66262bba7b73f875919d957038bdbcb3d55be81e5a781f66529e5cebcc247
+          - name: OVIRT_DRIVER_OPERATOR_IMAGE
+            value: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:91377212e97d3df0b7584c0281728a32bea68e878e8f4aca39d1d7e595912360
+          - name: OVIRT_DRIVER_IMAGE
+            value: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:70cdaac045bfc848505d7ca0f61ad1df9562079c6f66fcde536740ec7495964e
+          - name: MANILA_DRIVER_OPERATOR_IMAGE
+            value: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:ea6d236d86bef4353c4099123a12a72071731a1f77ff0523ddc565977d987a83
+          - name: MANILA_DRIVER_IMAGE
+            value: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:1852049dc15cad2727ae110ffe5c9bc56e4dc4e7b07be19eb2e4e9b5f4f9bcee
+          - name: MANILA_NFS_DRIVER_IMAGE
+            value: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:4b29fbaa310ecb1acb01788f0a74835800f5722d20bb501212061d4f7644dd4b
+          - name: PROVISIONER_IMAGE
+            value: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:fc9125b0bfc8843fc53b763908b4b353a8f2991731ca3f61375ade95347791c7
+          - name: ATTACHER_IMAGE
+            value: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:3e419aa9c8b1623a1bfc33f3a1fa74b702663627a4d19582b1782eea5b7c1360
+          - name: RESIZER_IMAGE
+            value: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:40e9c3e9310a88b369da3ded7bb24669007ae2f1133ca2ad64da7bad8d7a1e2d
+          - name: SNAPSHOTTER_IMAGE
+            value: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:6df7b538de9a94edddbc1ac631c3e2c90c9c1fd368524cb149b55bc3da27e0a2
+          - name: NODE_DRIVER_REGISTRAR_IMAGE
+            value: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:1f6953f3f74ea895b82ce7daabb9e59ff7e738491c2d0f7e9740f3acbde9ce02
+          - name: LIVENESS_PROBE_IMAGE
+            value: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:0e242ff08cce5f42b7bb587a590ecc1408f8dc50360aa74cd001f5c0ae0eead7
+          resources:
+            requests:
+              cpu: 10m
+              memory: 20Mi

@@ -1,0 +1,92 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: network-operator
+  namespace: openshift-network-operator
+  labels:
+    name: network-operator
+spec:
+  selector:
+    matchLabels:
+      name: network-operator
+  template:
+    metadata:
+      labels:
+        name: network-operator
+    spec:
+      containers:
+      - name: network-operator
+        image: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:e453d6e4d55de90200d145111bf47c16bf852e7200214ba66497a8cc94aeeedf
+        command:
+        - "/usr/bin/cluster-network-operator"
+        - "--url-only-kubeconfig=/etc/kubernetes/kubeconfig"
+        resources:
+          requests:
+            cpu: 10m
+            memory: 50Mi
+        env:
+        - name: RELEASE_VERSION
+          value: "4.6.36"
+        - name: SDN_IMAGE
+          value: "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:23fa19733068520b8adf64053f563a1dfb7b9c19d9ea1889a295015ae5d4fbad"
+        - name: KUBE_PROXY_IMAGE
+          value: "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:198eeb9a4277ae3a6f6b2d855c1cfe7e1e4ad4af25d857b97bf62ac2f6093f9d"
+        - name: KUBE_RBAC_PROXY_IMAGE
+          value: "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:25b62a00ea77d0f57906ee344a1416f3b0183aca8008e98a87cd5d06cfa4a690"
+        - name: MULTUS_IMAGE
+          value: "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:05430e9f7d2d209fe05700a8802bc686673dfe90412903a08ae10e018e929707"
+        - name: MULTUS_ADMISSION_CONTROLLER_IMAGE
+          value: "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:98b21ea59c78c7de41a273072501e99e6ee0ebd3c1dd3d8bacfe1d8f754babfa"
+        - name: CNI_PLUGINS_IMAGE
+          value: "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:60dd75c6bf3952a0236604d125990ad86c8c703fb93f976c364f2be79b14ebda"
+        - name: WHEREABOUTS_CNI_IMAGE
+          value: "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:1f7c016b26091bbf46d3916c168c7ea06c92531c06ab8cf780261f6825b9ea1b"
+        - name: ROUTE_OVERRRIDE_CNI_IMAGE
+          value: "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:d5d2d80152cdbf7ecd663229d189cfb4c431d6fd39010cb935580cc51ec72be4"
+        - name: OVN_IMAGE
+          value: "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:4bac5032c1374a8a2d9ab10b8ad6ba5f717786c9a3547fbabd099bd7d81c9204"
+        - name: OVN_NB_RAFT_ELECTION_TIMER
+          value: "10000"
+        - name: OVN_SB_RAFT_ELECTION_TIMER
+          value: "16000"
+        - name: OVN_NORTHD_PROBE_INTERVAL
+          value: "5000"
+        - name: OVN_CONTROLLER_INACTIVITY_PROBE
+          value: "30000"
+        - name: KURYR_DAEMON_IMAGE
+          value: "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:eae7daf009b32496a664103f392458e8a294d16d94aeab7d05fd9db01b4e0679"
+        - name: KURYR_CONTROLLER_IMAGE
+          value: "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:8df6cecca0db750dccbe63b9c8913fddcd087e3fa254c188d38ae0b58979f01e"
+        - name: NETWORK_METRICS_DAEMON_IMAGE
+          value: "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:f73f3198bc6fed0d243df52c36ef2bd18f5079a55ce5551fc0202e0d2c9256ac"
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        terminationMessagePolicy: FallbackToLogsOnError
+        volumeMounts:
+        - mountPath: /etc/kubernetes/kubeconfig
+          name: host-kubeconfig
+          readOnly: true
+      hostNetwork: true
+      nodeSelector:
+        node-role.kubernetes.io/master: ""
+      priorityClassName: "system-cluster-critical"
+      volumes:
+        - name: host-kubeconfig
+          hostPath:
+            path: /etc/kubernetes/kubeconfig
+      restartPolicy: Always
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 65534
+      tolerations:
+      - key: "node-role.kubernetes.io/master"
+        operator: Exists
+        effect: NoSchedule
+      - key: "node.kubernetes.io/not-ready"
+        operator: Exists
+        effect: NoSchedule
+      - key: node.kubernetes.io/network-unavailable
+        operator: Exists
+        effect: NoSchedule

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: openshift-controller-manager-operator
+  name: openshift-controller-manager-images
+  annotations:
+    include.release.openshift.io/self-managed-high-availability: "true"
+data:
+  builderImage: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:a261653285dfb996fef425335d85a0b324af3ce88689e21dd7d3905e57b7c020
+  deployerImage: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:673b79f9c654913ef8a559c4b545f610013bce2aacaa65b5e560b236d4891330

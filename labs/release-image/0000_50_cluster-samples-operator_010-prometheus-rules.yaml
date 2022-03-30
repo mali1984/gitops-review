@@ -1,0 +1,85 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  labels:
+    name: samples-operator-alerts
+  name: samples-operator-alerts
+  namespace: openshift-cluster-samples-operator
+spec:
+  groups:
+  - name: SamplesOperator
+    rules:
+    - alert: SamplesRetriesMissingOnImagestreamImportFailing
+      expr: sum(openshift_samples_failed_imagestream_import_info) > sum(openshift_samples_retry_imagestream_import_total) - sum(openshift_samples_retry_imagestream_import_total offset 30m)
+      for: 2h
+      labels:
+        severity: warning
+      annotations:
+        message: |
+          Samples operator is detecting problems with imagestream image imports, and the periodic retries of those
+          imports are not occurring.  Contact support.  You can look at the "openshift-samples" ClusterOperator object
+          for details. Most likely there are issues with the external image registry hosting the images that need to
+          be investigated.  The list of ImageStreams that have failing imports are:
+          {{ range query "openshift_samples_failed_imagestream_import_info > 0" }}
+            {{ .Labels.name }}
+          {{ end }}
+          However, the list of ImageStreams for which samples operator is retrying imports is:
+          retrying imports:
+          {{ range query "openshift_samples_retry_imagestream_import_total > 0" }}
+             {{ .Labels.imagestreamname }}
+          {{ end }}
+    - alert: SamplesImagestreamImportFailing
+      expr: sum(openshift_samples_retry_imagestream_import_total) - sum(openshift_samples_retry_imagestream_import_total offset 30m) > sum(openshift_samples_failed_imagestream_import_info)
+      for: 2h
+      labels:
+        severity: warning
+      annotations:
+        message: |
+          Samples operator is detecting problems with imagestream image imports.  You can look at the "openshift-samples"
+          ClusterOperator object for details. Most likely there are issues with the external image registry hosting
+          the images that needs to be investigated.  Or you can consider marking samples opertaor Removed if you do not
+          care about having sample imagestreams available.  The list of ImageStreams for which samples operator is
+          retrying imports:
+          {{ range query "openshift_samples_retry_imagestream_import_total > 0" }}
+             {{ .Labels.imagestreamname }}
+          {{ end }}
+    - alert: SamplesDegraded
+      expr: openshift_samples_degraded_info == 1
+      for: 2h
+      labels:
+        severity: warning
+      annotations:
+        message: |
+          Samples could not be deployed and the operator is degraded. Review the "openshift-samples" ClusterOperator object for further details.
+    - alert: SamplesInvalidConfig
+      expr: openshift_samples_invalidconfig_info == 1
+      for: 2h
+      labels:
+        severity: warning
+      annotations:
+        message: |
+          Samples operator has been given an invalid configuration.
+    - alert: SamplesMissingSecret
+      expr: openshift_samples_invalidsecret_info{reason="missing_secret"} == 1
+      for: 2h
+      labels:
+        severity: warning
+      annotations:
+        message: |
+          Samples operator cannot find the samples pull secret in the openshift namespace.
+    - alert: SamplesMissingTBRCredential
+      expr: openshift_samples_invalidsecret_info{reason="missing_tbr_credential"} == 1
+      for: 2h
+      labels:
+        severity: warning
+      annotations:
+        message: |
+          The samples operator cannot find credentials for 'registry.redhat.io'. Many of the sample ImageStreams will fail to import unless the 'samplesRegistry' in the operator configuration is changed.
+    - alert: SamplesTBRInaccessibleOnBoot
+      expr: openshift_samples_tbr_inaccessible_info == 1
+      for: 2d
+      labels:
+        severity: info
+      annotations:
+        message: |
+          Samples operator could not access 'registry.redhat.io' during its initial installation and it boostrapped as removed.
